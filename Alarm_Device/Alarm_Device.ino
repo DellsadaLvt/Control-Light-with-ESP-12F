@@ -19,7 +19,7 @@ int set_mins_on = 10, set_mins_off = 15;
 short int state;
 
 //==========AP info=======================//
-char* ssid_ap = "IOT_ESP8266";
+char* ssid_ap = "IOT_ESP8266_2";
 char* pass_ap = "10100101";
 IPAddress ip_ap(192, 168, 1, 1);
 IPAddress gateway_ap(192, 168, 1, 1);
@@ -174,7 +174,7 @@ void setup() {
     WiFi.mode(WIFI_AP);
     WiFi.softAPConfig(ip_ap, gateway_ap, subnet_ap);
     WiFi.softAP(ssid_ap,pass_ap);
-   /* Serial.println("Soft Access Point mode!");
+    /*Serial.println("Soft Access Point mode!");
     Serial.print("Please connect to ");
     Serial.println(ssid_ap);
     Serial.print("Web Server IP Address: ");
@@ -219,8 +219,8 @@ void mainpage(){
 
 void State_led()
 {
-  if( (mins == set_mins_on) || (mins == 17)|| (mins == 25)|| (mins == 35)) {state =1;} // low 10
-  if(mins == set_mins_off || (mins == 20)|| (mins == 30)|| (mins == 50)) {state = 0;} /// high 15
+  if( (mins == 5) || (mins == 17)|| (mins == 25)|| (mins == 35)|| (mins == 45)) {state =0;} // high 10
+  if((mins == 7 )|| (mins == 20)|| (mins == 27)|| (mins == 37) || (mins == 50)){state = 1;} /// low 15
   if(state == 0)  digitalWrite(D4,  HIGH);
   if(state ==1)   digitalWrite(D4, LOW);
   ///*/////
